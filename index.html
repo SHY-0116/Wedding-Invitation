@@ -46,8 +46,8 @@
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <img src="./assets/img/main.png">
                 <div class="col-lg-8 align-self-end">
+                    <img src="./assets/img/main.png" style="width:100%;height:100%;">
                     <h1 class="text-black fs-3 font-weight-bold mt-5">최신형 & 박소연</h1>
                     <hr class="divider" />
                 </div>
@@ -159,61 +159,96 @@
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
-            <!-- 지도를 표시할 div 입니다 -->
+            <h2 class="text-center mt-0">오시는길</h2>
+            <hr class="divider" />
             <div id="map" style="width:100%;height:350px;"></div>
-
             <script type="text/javascript"
                 src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1dbc43d36333a34e391e0c764dd2fee3"></script>
             <script>
                 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                     mapOption = {
-                        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                        level: 3 // 지도의 확대 레벨
+                        center: new kakao.maps.LatLng(36.75097353752118, 126.99225935487478), // 지도의 중심좌표
+                        level: 4 // 지도의 확대 레벨
                     };
 
-                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-                var map = new kakao.maps.Map(mapContainer, mapOption); 
-            </script>
-            <h2 class="text-center mt-0">At Your Service</h2>
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-            <hr class="divider" />
+                // 마커가 표시될 위치입니다 
+                var markerPosition = new kakao.maps.LatLng(36.75097353752118, 126.99225935487478);
+
+                var icon = new kakao.maps.MarkerImage(
+                    'https://t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_map02.png',
+                    new kakao.maps.Size(31, 35),
+                    {
+                        offset: new kakao.maps.Point(16, 34),
+                        alt: "마커 이미지 예제",
+                        shape: "poly",
+                        coords: "1,20,1,9,5,2,10,0,21,0,27,3,30,9,30,20,17,33,14,33"
+                    }
+                )
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition,
+                    image: icon
+                });
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+                // 지도에 클릭 이벤트를 등록합니다
+                kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+                    window.open("http://kko.to/1WCXT_tPi")
+                });
+                kakao.maps.event.addListener(marker, 'click', function (mouseEvent) {
+                    window.open("http://kko.to/1WCXT_tPi")
+                });
+            </script>
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
+                        <div class="mb-2"><i class="bi-pin-map fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2 fs-5">대중교통</h3>
+                        <p class="text-muted mb-0 small">*온양온천역 승차(신한은행 앞) - 엘크루아파트 하차<br>&lt350번, 351번, 352번&gt</p>
+                        <p class="text-muted mb-0 small">*아산터미널(환승주차장) - 엘크루아파트 하차<br>&lt350번, 351번&gt</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
                         <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Sturdy Themes</h3>
-                        <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Up to Date</h3>
-                        <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Ready to Publish</h3>
-                        <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Made with Love</h3>
-                        <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                        <h3 class="h4 mb-2 fs-5">모나무르</h3>
+                        <p class="text-muted mb-0 small">충청남도 아산시 장존동 185-7 (순청향로 624)<br>041-582-1004</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Call to action-->
-    <section class="page-section bg-dark text-white">
+    <section class="page-section bg-white">
         <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-            <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+            <h2 class="mb-4">마음 전하기</h2>
+            <hr class="divider" />
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>wjiewdjiwedjiwedjioawefjiads</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <!-- Contact-->
