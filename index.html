@@ -203,7 +203,7 @@
                     window.open("http://kko.to/1WCXT_tPi")
                 });
             </script>
-            <div class="row gx-4 gx-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
                         <div class="mb-2"><i class="bi-pin-map fs-1 text-primary"></i></div>
@@ -212,6 +212,8 @@
                         <p class="text-muted mb-0 small">*아산터미널(환승주차장) - 엘크루아파트 하차<br>&lt350번, 351번&gt</p>
                     </div>
                 </div>
+            </div>
+            <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
                         <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
@@ -229,21 +231,127 @@
             <hr class="divider" />
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#groomModal">
+                신랑측
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="groomModal" tabindex="-1" aria-labelledby="groomModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="groomModalLabel">신랑측</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>부) 최관진:
+                                <button onclick="copyGroomFatherAccount()" type="button" class="btn modal-body"
+                                    data-bs-toggle="modal" data-bs-target="#copyModal" aria-label="Copy">
+                                    302-1322-6781-11 농협</button>
+                                <script>
+                                    function copyToClipboard(val) {
+                                        const t = document.createElement("textarea");
+                                        document.body.appendChild(t);
+                                        t.value = val;
+                                        t.select();
+                                        document.execCommand('copy');
+                                        document.body.removeChild(t);
+                                    }
+                                    function copyGroomFatherAccount() {
+                                        copyToClipboard("302 1322 6781 11 농협");
+                                    }
+                                </script>
+                            </p>
+                            <p>신랑 최신형:
+                                <button onclick="copyGroomAccount()" type="button" class="btn modal-body"
+                                    data-bs-toggle="modal" data-bs-target="#copyModal" aria-label="Copy">
+                                    9003-2367-9038-4 새마을</button>
+                                <script>
+                                    function copyToClipboard(val) {
+                                        const t = document.createElement("textarea");
+                                        document.body.appendChild(t);
+                                        t.value = val;
+                                        t.select();
+                                        document.execCommand('copy');
+                                        document.body.removeChild(t);
+                                    }
+                                    function copyGroomAccount() {
+                                        copyToClipboard("9003 2367 9038 4 새마을");
+                                    }
+                                </script>
+                            </p>
+                            <p class="text-muted mb-0 small">계좌번호를 클릭하시면 복사됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bridalModal">
+                신부측
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="bridalModal" tabindex="-1" aria-labelledby="bridalModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="bridalModalLabel">신부측</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>wjiewdjiwedjiwedjioawefjiads</p>
+                            <p>부) 박건필:
+                                <button onclick="copyBridalFatherAccount()" type="button" class="btn modal-body"
+                                    data-bs-toggle="modal" data-bs-target="#copyModal" aria-label="Copy">
+                                    139-05-070512 우리</button>
+                                <script>
+                                    function copyToClipboard(val) {
+                                        const t = document.createElement("textarea");
+                                        document.body.appendChild(t);
+                                        t.value = val;
+                                        t.select();
+                                        document.execCommand('copy');
+                                        document.body.removeChild(t);
+                                    }
+                                    function copyBridalFatherAccount() {
+                                        copyToClipboard("139 05 070512 우리");
+                                    }
+                                </script>
+                            </p>
+                            <p>신부 박소연:
+                                <button onclick="copyBridalAccount()" type="button" class="btn modal-body"
+                                    data-bs-toggle="modal" data-bs-target="#copyModal" aria-label="Copy">
+                                    9003-2591-3857-7 새마을</button>
+                                <script>
+                                    function copyToClipboard(val) {
+                                        const t = document.createElement("textarea");
+                                        document.body.appendChild(t);
+                                        t.value = val;
+                                        t.select();
+                                        document.execCommand('copy');
+                                        document.body.removeChild(t);
+                                    }
+                                    function copyBridalAccount() {
+                                        copyToClipboard("9003 2591 3857 7 새마을");
+                                    }
+                                </script>
+                            </p>
+                            <p class="text-muted mb-0 small">계좌번호를 클릭하시면 복사됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="copyModal" aira-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>복사되었습니다</p>
                         </div>
                     </div>
                 </div>
