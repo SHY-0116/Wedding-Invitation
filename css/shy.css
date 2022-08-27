@@ -9,3 +9,12 @@
     background-attachment: scroll;
     background-size: cover;
 }
+
+
+.small-2 {
+    font-size: 0.75rem
+}
+
+.small-3 {
+    font-size: 0.5rem
+}
