@@ -454,7 +454,7 @@
 
                                         async function get_data() {
                                             init();
-                                            const { data, error } = await supabase.from('comments').select();
+                                            const { data, error } = await supabase.from('comments').select().order('id', { ascending: true });
                                             $(function () {
                                                 comment = ''
                                                 for (idx in data) {
